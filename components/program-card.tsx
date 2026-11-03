@@ -11,6 +11,7 @@ import type { Programme } from "@/lib/content";
 export function ProgramCard({ programme, index }: { programme: Programme; index: number }) {
   return (
     <motion.div variants={staggerChild} className="h-full">
+      <TiltCard className="h-full" max={4} rounded="rounded-2xl">
       <Link
         href={`/${programme.slug}`}
         className="group relative flex h-full min-h-[24rem] flex-col justify-end overflow-hidden rounded-2xl border border-navy/20 bg-navy p-7 text-white shadow-card transition-all duration-300 hover:border-gold/60 hover:shadow-glow"
@@ -58,6 +59,7 @@ export function ProgramCard({ programme, index }: { programme: Programme; index:
           </div>
         </div>
       </Link>
+      </TiltCard>
     </motion.div>
   );
 }

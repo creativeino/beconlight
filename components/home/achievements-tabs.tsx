@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUpRight, Award, Globe, Medal, Trophy } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { achievementSets } from "@/lib/achievements";
 
@@ -12,6 +13,7 @@ const featured = [
 ];
 
 export function AchievementsTabs() {
+  const reduce = useReducedMotion();
   const sets = featured
     .map((item) => {
       const data = achievementSets.find((set) => set.slug === item.slug);
@@ -49,6 +51,11 @@ export function AchievementsTabs() {
 
         return (
           <TabsContent key={set.slug} value={set.slug} className="mt-6">
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 18, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
             <div className="overflow-hidden rounded-2xl border border-navy/15 bg-white shadow-card">
               {/* Table header bar */}
               <div className="flex items-center justify-between border-b border-navy/10 bg-sand/40 px-6 py-4">
@@ -120,6 +127,7 @@ export function AchievementsTabs() {
                 </Link>
               </div>
             </div>
+            </motion.div>
           </TabsContent>
         );
       })}

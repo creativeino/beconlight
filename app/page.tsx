@@ -11,7 +11,6 @@ import { CtaSection } from "@/components/cta-section";
 import { Reveal, Stagger } from "@/components/motion/reveal";
 import { StaggerItem } from "@/components/stagger-item";
 import { Counter } from "@/components/motion/counter";
-import { TiltCard } from "@/components/motion/tilt-card";
 import { RevealImage } from "@/components/motion/reveal-image";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Marquee } from "@/components/motion/marquee";
