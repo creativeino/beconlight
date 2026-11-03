@@ -7,7 +7,7 @@ import {
   motion,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, ChevronDown, Play } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import { MdSchool } from "react-icons/md";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { Reveal } from "@/components/motion/reveal";
@@ -181,18 +181,7 @@ export function Hero() {
         </div>
       </div>
 
-      <Link
-        href="#welcome"
-        aria-label="Scroll to next section"
-        className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-[0.55rem] font-bold uppercase tracking-[0.24em] text-white/40 transition-colors hover:text-gold-2 lg:flex"
-      >
-        Scroll
-        <span
-          aria-hidden="true"
-          className="h-8 w-px bg-gradient-to-b from-gold/80 to-transparent"
-        />
-        <ChevronDown className="size-3.5" />
-      </Link>
+
     </section>
   );
 }
