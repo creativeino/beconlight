@@ -120,12 +120,12 @@ export const differentiators = [
     text: "Mutala-e-Quran and LIM weave ethics, faith and leadership into everyday learning.",
   },
   {
-    icon: "sparkles",
+    icon: "bookOpen",
     title: "No Examination Policy",
     text: "Continuous feedback instead of exam pressure until Class V, so children learn with confidence.",
   },
   {
-    icon: "bot",
+    icon: "flask",
     title: "STEM & Robotics",
     text: "Hands-on robotics, science labs and multimedia classrooms turn curiosity into capability.",
   },

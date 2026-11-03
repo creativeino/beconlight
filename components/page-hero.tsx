@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { FaGraduationCap } from "react-icons/fa";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { Reveal } from "@/components/motion/reveal";
 import { HeroBackdrop } from "@/components/motion/hero-backdrop";
@@ -59,8 +60,8 @@ export function PageHero({
         className={cn(
           "shell relative flex flex-col",
           portrait
-            ? "gap-12 py-20 lg:grid lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-16 lg:py-24"
-            : "min-h-[33rem] justify-end pb-14 pt-24 sm:min-h-[36rem] sm:pb-16 lg:min-h-[40rem] lg:pb-20",
+            ? "gap-8 py-12 lg:grid lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-12 lg:py-16"
+            : "justify-center pb-10 pt-16 sm:pb-12 sm:pt-20 lg:pb-14 lg:pt-24",
         )}
       >
         <div className={cn("max-w-4xl", align === "center" && !portrait && "mx-auto text-center")}>
@@ -68,7 +69,7 @@ export function PageHero({
             <nav
               aria-label="Breadcrumb"
               className={cn(
-                "mb-6 flex flex-wrap items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/50",
+                "mb-3.5 flex flex-wrap items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/50",
                 align === "center" && !portrait && "justify-center",
               )}
             >
@@ -90,7 +91,7 @@ export function PageHero({
 
           <Reveal delay={0.05}>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.2em] text-gold-2 backdrop-blur">
-              <Sparkles className="size-3" />
+              <FaGraduationCap className="size-3 text-gold-2" />
               {eyebrow}
             </span>
           </Reveal>
@@ -100,7 +101,7 @@ export function PageHero({
             text={title}
             delay={0.1}
             className={cn(
-              "display-xl mt-6 max-w-4xl text-[clamp(3rem,6.4vw,5.6rem)] text-white",
+              "display-xl mt-4 max-w-3xl text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-white tracking-tight leading-[1.15]",
               align === "center" && !portrait && "mx-auto",
             )}
           />
@@ -108,7 +109,7 @@ export function PageHero({
           <Reveal delay={0.28}>
             <p
               className={cn(
-                "mt-6 max-w-2xl text-[0.98rem] leading-relaxed text-white/65 sm:text-lg",
+                "mt-3.5 max-w-2xl text-[0.92rem] leading-relaxed text-white/70 sm:text-base",
                 align === "center" && !portrait && "mx-auto",
               )}
             >
@@ -126,7 +127,7 @@ export function PageHero({
 
           {children ? <Reveal delay={0.4}>{children}</Reveal> : null}
 
-          <div className="mt-12 hidden items-center gap-3 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/35 lg:flex">
+          <div className="mt-6 hidden items-center gap-3 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/35 lg:flex">
             <span className="h-px w-14 bg-gold/60" />
             Beacon Light Academy · Since 1986
           </div>

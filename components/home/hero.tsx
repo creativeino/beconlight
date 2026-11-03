@@ -7,7 +7,8 @@ import {
   motion,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, ChevronDown, Play, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, Play } from "lucide-react";
+import { MdSchool } from "react-icons/md";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { Reveal } from "@/components/motion/reveal";
 import { Counter } from "@/components/motion/counter";
@@ -87,7 +88,7 @@ export function Hero() {
         <div className="max-w-4xl">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-ink/60 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold-2 backdrop-blur">
-              <Sparkles className="size-3 text-gold" />
+              <MdSchool className="size-3.5 text-gold" />
               Admissions Open · Session 2026–27
             </span>
           </Reveal>

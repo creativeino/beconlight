@@ -1,4 +1,5 @@
-import { Mail, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
+import { BsLightbulb } from "react-icons/bs";
 import { site } from "@/lib/site";
 
 const tips = [
@@ -48,7 +49,7 @@ export function FormAside({
 
       <div className="rounded-3xl border border-navy/10 bg-white p-6 shadow-card">
         <p className="flex items-center gap-2 text-[0.6rem] font-bold uppercase tracking-[0.18em] text-gold">
-          <Sparkles className="size-3.5" /> Good to know
+          <BsLightbulb className="size-3.5" /> Good to know
         </p>
         <ul className="mt-4 space-y-3">
           {tips.map((tip) => (

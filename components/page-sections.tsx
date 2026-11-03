@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Download, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, FileText } from "lucide-react";
+import { FaCheckCircle } from "react-icons/fa";
 import type { PageSection } from "@/lib/pages";
 import { Reveal, Stagger, staggerChild } from "@/components/motion/reveal";
 import { motion } from "framer-motion";
@@ -86,7 +87,7 @@ export function PageSections({ sections }: { sections: PageSection[] }) {
                             {item.tag}
                           </span>
                         ) : (
-                          <Sparkles className="size-4 text-gold" />
+                          <FaCheckCircle className="size-4 text-gold" />
                         )}
                         {item.href ? (
                           <ArrowUpRight className="size-4 text-navy/30 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />

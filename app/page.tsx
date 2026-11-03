@@ -1,3 +1,4 @@
+import { FaGraduationCap, FaHeart, FaBookOpen, FaFlask, FaTrophy, FaShieldAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Megaphone, Phone } from "lucide-react";
@@ -13,7 +14,7 @@ import { StaggerItem } from "@/components/stagger-item";
 import { Counter } from "@/components/motion/counter";
 import { RevealImage } from "@/components/motion/reveal-image";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
-import { Marquee } from "@/components/motion/marquee";
+import { TiltCard } from "@/components/motion/tilt-card";
 import { LeadershipQuotes } from "@/components/leadership-quotes";
 import { stats, campuses, differentiators, events, notices, programmes } from "@/lib/content";
 
@@ -42,17 +43,6 @@ const quickLinks = [
     image: "/media/images/Beacon-light-Academy-Notice-Board.jpg",
     cta: "View notices",
   },
-];
-
-const marqueeWords = [
-  "O Levels",
-  "A Levels",
-  "AKU-EB",
-  "Pearson Edexcel",
-  "Robotics Labs",
-  "STEM & Innovation",
-  "Since 1986",
-  "Six Campuses",
 ];
 
 const news = events.filter((story) => story.featured || story.category !== "Competition").slice(0, 3);
@@ -162,8 +152,9 @@ export default function HomePage() {
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {quickLinks.map((link) => (
               <StaggerItem key={link.href}>
-                <Link href={link.href} className="group block h-full">
-                  <div className="relative flex h-full min-h-[16rem] flex-col justify-end overflow-hidden rounded-2xl border border-navy/15 bg-navy p-7 text-white shadow-card transition-all duration-300 hover:border-gold/70 hover:shadow-glow">
+                <TiltCard className="h-full" max={5} rounded="rounded-2xl">
+                  <Link href={link.href} className="group block h-full">
+                    <div className="relative flex h-full min-h-[16rem] flex-col justify-end overflow-hidden rounded-2xl border border-navy/15 bg-navy p-7 text-white shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/70 hover:shadow-[0_20px_50px_-20px_rgba(241,199,109,0.35)]">
                     <Image
                       src={link.image}
                       alt=""
@@ -183,8 +174,9 @@ export default function HomePage() {
                         <ArrowRight className="size-3.5" />
                       </span>
                     </div>
-                  </div>
-                </Link>
+                    </div>
+                  </Link>
+                </TiltCard>
               </StaggerItem>
             ))}
           </Stagger>
@@ -206,21 +198,6 @@ export default function HomePage() {
             ))}
           </Stagger>
         </div>
-      </section>
-
-      {/* Editorial marquee */}
-      <section aria-hidden="true" className="overflow-hidden border-y border-navy/10 bg-cream py-6">
-        <Marquee speed={48} className="mask-fade-x">
-          {marqueeWords.map((word) => (
-            <span
-              key={word}
-              className="flex shrink-0 items-center gap-8 whitespace-nowrap font-display text-[clamp(1.2rem,2.2vw,1.8rem)] uppercase tracking-[0.06em] text-navy/70"
-            >
-              {word}
-              <span className="size-1.5 rounded-full bg-gold" />
-            </span>
-          ))}
-        </Marquee>
       </section>
 
       {/* Stats band */}
@@ -257,8 +234,8 @@ export default function HomePage() {
           {differentiators.map((item) => (
             <StaggerItem key={item.title}>
               <SpotlightCard className="h-full rounded-3xl">
-                <div className="group h-full rounded-3xl border border-navy/8 bg-white p-6 shadow-[0_18px_40px_-38px_rgba(7,26,47,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-card">
-                  <span className="grid size-11 place-items-center rounded-2xl bg-navy text-gold-2 transition-all duration-300 group-hover:bg-gold group-hover:text-ink">
+                <div className="group h-full rounded-3xl border border-navy/8 bg-white p-6 shadow-[0_18px_40px_-38px_rgba(7,26,47,0.5)] transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-[0_24px_50px_-25px_rgba(7,26,47,0.35)]">
+                  <span className="grid size-11 place-items-center rounded-2xl bg-navy text-gold transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-gold group-hover:text-navy group-hover:shadow-md">
                     <DifferentiatorIcon name={item.icon} />
                   </span>
                   <h3 className="mt-5 font-display text-[1.4rem] leading-tight text-navy">
@@ -482,12 +459,12 @@ export default function HomePage() {
 
 function DifferentiatorIcon({ name }: { name: string }) {
   const icons: Record<string, React.ReactNode> = {
-    graduation: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><path d="M22 10 12 5 2 10l10 5 10-5Z" /><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" /></svg>,
-    heart: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z" /></svg>,
-    sparkles: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z" /><path d="m19 16 .7 1.8L21.5 18.5l-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7L19 16Z" /></svg>,
-    bot: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><rect x="4" y="8" width="16" height="12" rx="3" /><path d="M12 8V4M8 14h.01M16 14h.01M2 13v3M22 13v3" /></svg>,
-    trophy: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" /><path d="M8 6H5a3 3 0 0 0 3 3M16 6h3a3 3 0 0 1-3 3M12 13v4M9 21h6M10 17h4v4h-4z" /></svg>,
-    shield: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></svg>,
+    graduation: <FaGraduationCap className="size-5 text-current transition-colors" />,
+    heart: <FaHeart className="size-5 text-current transition-colors" />,
+    bookOpen: <FaBookOpen className="size-5 text-current transition-colors" />,
+    flask: <FaFlask className="size-5 text-current transition-colors" />,
+    trophy: <FaTrophy className="size-5 text-current transition-colors" />,
+    shield: <FaShieldAlt className="size-5 text-current transition-colors" />,
   };
-  return icons[name] ?? icons.sparkles;
+  return icons[name] ?? <FaBookOpen className="size-5 text-current transition-colors" />;
 }

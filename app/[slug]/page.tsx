@@ -51,6 +51,8 @@ export async function generateMetadata({
   return { title: "Page not found" };
 }
 
+export const instant = false;
+
 export default async function ContentPage({
   params,
 }: {

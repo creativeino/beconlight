@@ -11,10 +11,10 @@ import {
   Mail,
   Menu,
   Phone,
-  Sparkles,
   X,
 } from "lucide-react";
 import { nav, site } from "@/lib/site";
+import { HiOutlineBellAlert } from "react-icons/hi2";
 import { Brand } from "@/components/brand";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ export function SiteHeader() {
               Admissions open for Session 2026–27
             </span>
             <Link href="/notice-board" className="inline-flex items-center gap-1.5 text-white/70 transition-colors hover:text-gold-2">
-              <Sparkles className="size-3" />
+              <HiOutlineBellAlert className="size-3.5" />
               Latest notices & results
             </Link>
           </div>

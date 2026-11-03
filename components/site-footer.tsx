@@ -175,11 +175,6 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="pointer-events-none select-none overflow-hidden border-t border-white/5">
-        <p className="shell -mb-3 translate-y-3 font-display text-[clamp(4rem,14vw,12rem)] leading-none tracking-tight text-white/[0.035]">
-          Beacon Light
-        </p>
-      </div>
     </footer>
   );
 }
